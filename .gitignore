@@ -1,0 +1,7 @@
+.env
+pgdata
+.cache
+.config
+.ipynb_checkpoints
+.ipython
+.local
