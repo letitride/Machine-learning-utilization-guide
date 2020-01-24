@@ -1,6 +1,6 @@
 version: '3'
 services:
- jupyter:
+  jupyter:
     env_file: ./.env
     build:
       context: .
@@ -10,4 +10,13 @@ services:
       - "${SCRIPTS_SRC}:/opt/analysis"
     ports:
       - "8888:8888"
+  web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile-flask
+    tty: true
+    volumes:
+      - ./WebApp:/WebApp
+    ports:
+      - "5000:5000"
 
