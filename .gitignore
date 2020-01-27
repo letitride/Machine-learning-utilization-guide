@@ -5,4 +5,7 @@ pgdata
 .ipynb_checkpoints
 .ipython
 .local
+__pycache__
 fish_images
+data.db
+
