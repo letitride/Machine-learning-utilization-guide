@@ -1,0 +1,11 @@
+FROM jupyter/scipy-notebook:65761486d5d3
+
+USER root
+RUN apt-get update
+RUN apt-get install -y python3-dev libpq-dev
+
+# Install
+RUN pip install --upgrade pip \
+  && pip install -U janome 
+
+CMD jupyter notebook --allow-root --NotebookApp.token="$NOTEBOOK_PASSWORD" /opt/analysis
