@@ -6,6 +6,8 @@ RUN apt-get install -y python3-dev libpq-dev
 
 # Install
 RUN pip install --upgrade pip \
-  && pip install -U janome 
+  && pip install -U janome  \
+  && pip install -U gensim \
+  && pip install -U networkx
 
 CMD jupyter notebook --allow-root --NotebookApp.token="$NOTEBOOK_PASSWORD" /opt/analysis
