@@ -3,6 +3,8 @@ FROM jupyter/scipy-notebook:65761486d5d3
 USER root
 RUN apt-get update
 RUN apt-get install -y python3-dev libpq-dev
+RUN apt install -y chromium-browser \
+  && apt-get install chromium-chromedriver
 
 # Install
 RUN pip install --upgrade pip \
