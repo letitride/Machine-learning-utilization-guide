@@ -8,6 +8,8 @@ RUN apt-get install -y python3-dev libpq-dev
 RUN pip install --upgrade pip \
   && pip install -U janome  \
   && pip install -U gensim \
-  && pip install -U networkx
+  && pip install -U networkx \
+  && pip install -U joblib \
+  && pip install -U selenium
 
 CMD jupyter notebook --allow-root --NotebookApp.token="$NOTEBOOK_PASSWORD" /opt/analysis
